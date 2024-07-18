@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "name": "gabconsult",
   "version": "0.1.0",
   "private": true,
@@ -12,6 +13,19 @@
     "react-dom": "^18.3.1",
     "react-router-dom": "^6.24.1",
     "react-router-hash-link": "^2.4.3",
+=======
+  "name": "gab-consult",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@radix-ui/react-navigation-menu": "^1.2.0",
+    "@testing-library/jest-dom": "^5.17.0",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
+    "classnames": "^2.5.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+>>>>>>> 23f58faf61a2cb21dc3a5568d5df61098fd156a7
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4"
   },
