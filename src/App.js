@@ -1,25 +1,16 @@
-import logo from './logo.svg';
-import './App.css';
+// src/App.js
+import React from 'react';
+import { BrowserRouter } from 'react-router-dom'; // Import BrowserRouter
+import HomePageNavbar from './components/HomePage-Navbar'; // Adjust the path as necessary
+import './App.css'; // Import CSS
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <HomePageNavbar />
+      {/* Other components can go here */}
+    </BrowserRouter>
   );
-}
+};
 
 export default App;

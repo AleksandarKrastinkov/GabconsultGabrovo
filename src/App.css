@@ -36,3 +36,291 @@
     transform: rotate(360deg);
   }
 }
+
+
+/* navbar */
+.navbar {
+  padding: 10px;
+  position: relative;
+  display: flex;
+  justify-content: flex-start; /* Align items to the left */
+  background-color: black; /* Ensure background color is black */
+}
+
+.navbar .container-fluid {
+  display: flex;
+  justify-content: space-between; /* Space between left and right sections */
+}
+
+.navbar-left {
+  display: flex;
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+  margin-right: 20px; /* Adjust margin to move the right section slightly to the left */
+}
+
+.navbar-item {
+  position: relative;
+  margin-right: 5px; /* Adjust margin to bring buttons very close together */
+}
+
+.navbar-item:last-child {
+  margin-right: 0; /* Remove margin for the last item */
+}
+
+.navbar-item .navbar-button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 20px;
+  transition: background-color 0.3s ease;
+  padding: 10px;
+  margin: 0;
+  border: none;
+  width: auto;
+  box-sizing: border-box;
+  background-color: black; /* Ensure button background color is black */
+  color: white; /* Ensure button text color is white */
+}
+
+.navbar-item .navbar-button:hover {
+  background-color: #555;
+}
+
+.navbar-item .navbar-button .arrow {
+  margin-left: 5px; /* Reduce margin to bring arrow very close to button text */
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  display: inline-block;
+  padding: 3px;
+  transition: transform 0.3s ease;
+}
+
+.navbar-item .navbar-button .arrow.down {
+  transform: rotate(45deg);
+}
+
+.navbar-item .navbar-button .arrow.up {
+  transform: rotate(-135deg);
+}
+
+.navbar-item .dropdown {
+  position: absolute;
+  top: 140%;
+  left: 0;
+  background-color: black;
+  display: flex;
+  width: 300px;
+  padding: 10px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  z-index: 1000;
+  border: 1px solid white; /* Add thin white border */
+}
+
+.navbar-item:hover .dropdown {
+  opacity: 1;
+  visibility: visible;
+}
+
+.dropdown-left {
+  width: 35%;
+  padding: 10px;
+  background-color: #555;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+}
+
+.dropdown-left-button {
+  background-color: transparent;
+  color: rgb(189, 31, 189);
+  border: none;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  text-align: center;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.dropdown-right {
+  width: 65%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 10px;
+}
+
+.dropdown-right-button {
+  margin: 5px 0;
+  border-radius: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.dropdown-right-button:hover {
+  background-color: #666;
+}
+
+span.navbar-text {
+  display: flex;
+  align-items: center;
+}
+
+.social-icon {
+  display: inline-block;
+  margin-left: 14px;
+}
+
+.social-icon a {
+  width: 42px;
+  height: 42px;
+  background: rgba(217, 217, 217, 0.1);
+  display: inline-flex;
+  border-radius: 50%;
+  margin-right: 6px;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.social-icon a::before {
+  content: "";
+  width: 42px;
+  height: 42px;
+  position: absolute;
+  background-color: #ffffff;
+  border-radius: 50%;
+  transform: scale(0);
+  transition: 0.3s ease-in-out;
+}
+
+.social-icon a:hover::before {
+  transform: scale(1);
+}
+
+.social-icon a img {
+  width: 40%;
+  z-index: 1;
+  transition: 0.3s ease-in-out;
+}
+
+.social-icon a:hover img {
+  filter: brightness(0) saturate(100%) invert(0%) sepia(7%) saturate(98%) hue-rotate(346deg) brightness(95%) contrast(86%);
+}
+
+nav.navbar .navbar-nav a.nav-link.navbar-link:hover,
+nav.navbar .navbar-nav a.nav-link.navbar-link.active {
+  opacity: 1;
+}
+
+.navbar-text button {
+  font-weight: 700;
+  color: #fff;
+  border: 1px solid #fff;
+  padding: 18px 34px;
+  font-size: 18px;
+  margin-left: 18px;
+  position: relative;
+  background-color: transparent;
+  overflow: hidden; /* Ensure the pseudo-element is contained within the button */
+  transition: color 0.3s ease-in-out; /* Transition for text color */
+}
+
+.navbar-text button span {
+  z-index: 1;
+  position: relative; /* Ensure the text is above the pseudo-element */
+}
+
+.navbar-text button::before {
+  content: "";
+  width: 0%;
+  height: 100%;
+  position: absolute;
+  background-color: #fff;
+  left: 0;
+  top: 0;
+  z-index: 0; /* Ensure the pseudo-element is below the text */
+  transition: width 0.3s ease-in-out; /* Transition width for smooth effect */
+}
+
+.navbar-text button:hover {
+  color: #000; /* Change text color to black on hover */
+}
+
+.navbar-text button:hover::before {
+  width: 100%; /* Fill the button with white from left to right */
+}
+
+nav.navbar .navbar-toggler:active,
+nav.navbar .navbar-toggler:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+nav.navbar .navbar-toggler-icon {
+  width: 24px;
+  height: 17px;
+  background-image: none;
+  position: relative;
+  border-bottom: 2px solid #fff;
+  transition: all 300ms linear;
+  top: -2px;
+}
+
+nav.navbar .navbar-toggler-icon:focus {
+  border-bottom: 2px solid #fff;
+}
+
+nav.navbar .navbar-toggler-icon:after,
+nav.navbar .navbar-toggler-icon:before {
+  width: 24px;
+  position: absolute;
+  height: 2px;
+  background-color: #fff;
+  top: 0;
+  left: 0;
+  content: '';
+  z-index: 2;
+  transition: all 300ms linear;
+}
+
+nav.navbar .navbar-toggler-icon:after {
+  top: 8px;
+}
+
+nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon:after {
+  transform: rotate(45deg);
+  background-color: #fff;
+  height: 2px;
+}
+
+nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon:before {
+  transform: translateY(8px) rotate(-45deg);
+  background-color: #fff;
+  height: 2px;
+}
+
+nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
+  border-color: transparent;
+}
+
+
+
+
+
+
+
+
+
+
+
+
